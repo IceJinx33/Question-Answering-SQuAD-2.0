@@ -13,5 +13,8 @@ Models:
    - Aligned Question Embedding (implemented as in paper)
    - Question Encoding
       - Mean of the hidden representation of the question tokens from a Bi-LSTM.
-2. DistilBERT (a deep contextualized pre-trained language model) with 2 linear layers on top - one for predicting the starting position of the answer, and another predicting the ending position of the answer in the document. 
-
+   - Prediction
+      - Train two classifiers independently to capture the start and end of the spans
+      - Use a bilinear terms w_s and w_e to capture similarity between the paragraph token encoding and question encoding for the starting and ending positions respectively.
+      - The exponent of the calculated similarity is directly proportional to the probability of the token being the starting/ending token.
+2. DistilBERT (a deep contextualized pre-trained language model) with 2 linear layers on top - one for predicting the starting position of the answer, and another predicting the ending position of the answer in the document.
