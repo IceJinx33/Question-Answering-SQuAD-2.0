@@ -12,6 +12,6 @@ Models:
       - Binary indicator Case-insensitive exact match - 1 if token in tokenized question, 0 if not.
    - Aligned Question Embedding (implemented as in paper)
    - Question Encoding
-    - Mean of the hidden representation of the question tokens from 
+      - Mean of the hidden representation of the question tokens from a Bi-LSTM.
 2. DistilBERT (a deep contextualized pre-trained language model) with 2 linear layers on top - one for predicting the starting position of the answer, and another predicting the ending position of the answer in the document. 
 
